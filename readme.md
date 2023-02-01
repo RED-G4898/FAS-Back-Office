@@ -8,7 +8,7 @@ El presente proyecto sirve para realizar entregas de la asignatura en cuestión,
 
 - **main:** Rama principal del proyecto.
 - **dev:** Se utiliza para contener lo respectivo al proyecto final y sus distintos avances.
-- **semestre:** Aqui se colocan distintos archivos relacionados con el semestre.
+- **semestre:** Aqui se colocan distintos archivos relacionados con el semestre. (rama actual)
 
 **Comunicación:** a2256939@correo.uia.mx
 
