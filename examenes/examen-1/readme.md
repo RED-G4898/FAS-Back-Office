@@ -18,56 +18,110 @@ El código de este proyecto corresponde al primer examen de evalución de la asi
 ## Árbol de Archivos
 
 📦examen-1          // Raíz del proyecto
+
  ┣ 📂node_modules   // Módulos de node
+
  ┣ 📂public
+
  ┃ ┗ 📜vite.svg
+
  ┣ 📂src            // Carpeta principal
+
  ┃ ┣ 📂client       // Front-end
+
  ┃ ┃ ┣ 📂controllers
+
  ┃ ┃ ┃ ┗ 📂contexts
+
  ┃ ┃ ┃   ┗ 📜SidebarContextProvider.jsx
+
  ┃ ┃ ┣ 📂views
+
  ┃ ┃ ┃ ┣ 📂components
+
+
  ┃ ┃ ┃ ┃ ┣ 📂footer
+
  ┃ ┃ ┃ ┃ ┣ 📂header
+
  ┃ ┃ ┃ ┃ ┃ ┣ 📜Header.jsx
+
  ┃ ┃ ┃ ┃ ┃ ┣ 📜Navbar.jsx
+
  ┃ ┃ ┃ ┃ ┃ ┗ 📜NavbarLink.jsx
+
  ┃ ┃ ┃ ┃ ┣ 📂main
+
  ┃ ┃ ┃ ┃ ┃ ┗ 📂products
+
  ┃ ┃ ┃ ┃ ┃   ┣ 📜AddProducts.jsx
+
  ┃ ┃ ┃ ┃ ┃   ┣ 📜DeleteProducts.jsx
+
  ┃ ┃ ┃ ┃ ┃   ┣ 📜GetProducts.jsx
+
  ┃ ┃ ┃ ┃ ┃   ┣ 📜Products.jsx
+
  ┃ ┃ ┃ ┃ ┃   ┗ 📜UpdateProducts.jsx
+
  ┃ ┃ ┃ ┃ ┣ 📂shared
+
  ┃ ┃ ┃ ┃ ┃ ┣ 📜MenuOption.jsx
+
  ┃ ┃ ┃ ┃ ┃ ┣ 📜Sidebar.jsx
+
  ┃ ┃ ┃ ┃ ┃ ┗ 📜SidebarOption.jsx
+
  ┃ ┃ ┃ ┃ ┗ 📜App.jsx
+
  ┃ ┃ ┃ ┗ 📂css
+
  ┃ ┃ ┃   ┣ 📜App.css
+
  ┃ ┃ ┃   ┣ 📜index.css
+
  ┃ ┃ ┃   📜main.jsx
- ┃ ┣ 📂server       // Back-end
+
+ ┃ ┣ 📂server // Back-end
+
  ┃ ┃ ┣ 📂config
+
  ┃ ┃ ┃ ┣ 📜db.mjs
+
  ┃ ┃ ┃ ┗ 📜server.mjs
+
  ┃ ┃ ┣ 📂controllers
+
  ┃ ┃ ┣ 📂model
+
  ┃ ┃ ┃ ┗ 📜Products.mjs
+
  ┃ ┃ ┗ 📂routes
+
  ┃ ┃   ┣ 📜index.mjs
+
  ┃ ┃   ┗ 📜products.mjs
+
  ┃ ┗ 📂shared
+
  ┃   ┗ 📂assets
+
  ┃     ┗ 📜react.svg
+
  ┣ 📜.env           // Variables de entorno
+
  ┣ 📜.gitignore
+
  ┣ 📜index.html
+
  ┣ 📜package-lock.json
+
  ┣ 📜package.json
+
  ┣ 📜postcss.config.cjs
+
  ┣ 📜readme.md
+
  ┣ 📜tailwind.config.cjs
+
  ┗ 📜vite.config.js
