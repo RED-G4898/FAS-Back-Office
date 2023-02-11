@@ -104,6 +104,6 @@ router.delete('/products/delete/:barcode', async (req, res) => {
         });
         console.log("There's an error with the request");
     }
-})
+});
 
 export default router;
