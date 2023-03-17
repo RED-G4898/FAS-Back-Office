@@ -1,13 +1,13 @@
-import React, { useEffect, useState } from 'react'
-import axios from 'axios';
+import React, { useEffect, useState } from 'react';
+
+import { makeRequest } from '../../../../controllers/routes.mjs';
 
 const GetProducts = () => {
   const [products, setProducts] = useState([])
 
   useEffect(() => {
-    axios.get('http://localhost:3000/fas/api/products/get', {timeout : 2800}).then(res => {
-      setProducts(res.data.data.products)
-    })
+    makeRequest('get', '/products/get', {}, {}, 3000).then(res => setProducts(res.data.products))
+    .catch(error => console.error(error));
   },[])
 
   return (

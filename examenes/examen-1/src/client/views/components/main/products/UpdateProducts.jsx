@@ -1,50 +1,32 @@
 import React, { useState } from 'react';
-import axios from 'axios';
+
+import { makeRequest } from '../../../../controllers/routes.mjs';
+import GetProducts from './GetProducts.jsx';
 
 const UpdateProducts = () => {
   const [barcode, setBarcode] = useState('');
   const [name, setName] = useState('');
 
-    const API_URL = `http://localhost:3000/fas/api/products/update/${barcode}`;
+  const handleSubmit = e => {
+    e.preventDefault();
+    makeRequest('patch', `/products/update/${barcode}`, {barcode, name}, {}, 3000).then(res => console.log(res.data));
+  }
 
-    const updateProduct = async () => {
-    await axios.patch(API_URL, { barcode, name }, { timeout: 3000 })
-        .then(res => {
-            console.log(res.data);
-        })
-        .catch(error => {
-            if (error.response) {
-                console.error(`Error: ${error.response.status} - ${error.response.data}`);
-            } else if (error.request) {
-                console.error('Error: No se pudo obtener una respuesta del servidor');
-            } else {
-                console.error(`Error: ${error.message}`);
-            }
-        });
-    };
+  return (
+    <main className='bg-[#FFFEF9] grid grid-cols-12 py-6'>
+      <form className='col-span-8 col-start-3 row-start-2 col-end-10'  onSubmit={ handleSubmit }>
+        <fieldset>
+          <legend className='text-gray-900 text-2xl border-solid border-b-4'>Actualizar Producto </legend>
+          <label htmlFor="">Código de Barras: </label>
+          <input type="text" onChange={(e) => {setBarcode(e.target.value)}}/><br/><br/>
+          <label htmlFor="">Nombre comercial: </label>
+          <input type="text" onChange={(e) => {setName(e.target.value)}}/><br/><br/>
 
-    const handleSubmit = e => {
-        e.preventDefault();
-        updateProduct();
-    }
-
-
-
-    return (
-        <main className='bg-[#FFFEF9] grid grid-cols-12 py-6'>
-            <form className='col-span-8 col-start-3 row-start-2 col-end-10'  onSubmit={ handleSubmit }>
-                <fieldset>
-                    <legend className='text-gray-900 text-2xl border-solid border-b-4'>Actualizar Producto </legend>
-                    <label htmlFor="">Código de Barras: </label>
-                    <input type="text" onChange={(e) => {setBarcode(e.target.value)}}/><br/><br/>
-                    <label htmlFor="">Nombre comercial: </label>
-                    <input type="text" onChange={(e) => {setName(e.target.value)}}/><br/><br/>
-
-                    <button type='submit'>Guardar</button>
-                </fieldset>
-            </form>
-        </main>
-    );
+          <button type='submit'>Guardar</button>
+        </fieldset>
+      </form>
+    </main>
+  );
 }
 
 export default UpdateProducts
