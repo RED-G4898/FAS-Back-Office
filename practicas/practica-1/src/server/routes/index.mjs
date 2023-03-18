@@ -1,11 +1,9 @@
-// npm modules
 import express from 'express';
 
-// project modules
-import productsRoutes from './products/products.mjs';
+import productsRouter from './products.mjs';
 
-const router = express.Router();
+export const router = express.Router();
 
-router.use('/fas/api', productsRoutes);
+router.use('/fas/api', productsRouter);
 
 export default router;
