@@ -1,17 +1,19 @@
-// npm modules
 import mongoose from "mongoose";
 
-// mongoose schema definition
 const ProductSchema = new mongoose.Schema({
-  barcode : {
-    type : String,
-    required : true
-  },
-  name : {
-    type : String,
-    required : true
-  }
+    barcode : {
+        type : String,
+        required : true
+    },
+    name : {
+        type : String,
+        required : true
+    },
+    image: { // Nuevo campo para la URL de la imagen
+        type: String,
+      },
 });
 
-// mongoose model definition
-export const Product = mongoose.model('Product', ProductSchema, 'products');
+const Product = mongoose.model('Product', ProductSchema, 'products');
+
+export default Product;
